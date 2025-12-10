@@ -4,6 +4,7 @@ import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:kff_super_admin/app/app.dart';
 import 'package:kff_super_admin/app/screens/arena_management/arena_management_screen.dart';
+import 'package:kff_super_admin/app/screens/banner/banner_screen.dart';
 import 'package:kff_super_admin/app/screens/dashboard/dashboard_screen.dart';
 import 'package:kff_super_admin/app/screens/finance/finance_screen.dart';
 import 'package:kff_super_admin/app/screens/users_management/users_management_screen.dart';
@@ -76,7 +77,8 @@ class _OwnerLayoutState extends State<OwnerLayout> {
       case 'finance':
         // return FinanceDashboard();
         return FinanceAdminPage();
-
+      case 'banner':
+        return BannerAdminPage();
       default:
         return const DashboardScreen();
     }
@@ -170,6 +172,7 @@ class _OwnerSidebar extends StatelessWidget {
                     'Финансы и отчеты',
                     'finance',
                   ),
+                  _buildNavItem(Icons.branding_watermark, 'Баннеры', 'banner'),
                 ],
               ),
             ),

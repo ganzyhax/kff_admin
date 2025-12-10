@@ -66,6 +66,7 @@ class ApiClient {
     Map<String, dynamic> data,
   ) async {
     final url = Uri.parse(AppConstant.baseUrl.toString() + endpoint);
+    log('POST Request to $url with data: $data');
     Future<http.Response> makePostRequest() async {
       String token = await LocalUtils.getAccessToken() ?? '';
 
